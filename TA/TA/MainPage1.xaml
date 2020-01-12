@@ -16,7 +16,7 @@
         </ControlTemplate>
     </Page.Resources>
 
-    <Grid x:Name="target" Style="{StaticResource LayoutRootStyle}">
+    <Grid x:Name="target">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160"/>
             <ColumnDefinition/>
