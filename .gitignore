@@ -1,3 +1,3 @@
-TA\TA\bin
-TA\TA\obj
-TA\.vs
+TA/TA/bin/*
+TA/TA/obj/*
+TA/.vs
