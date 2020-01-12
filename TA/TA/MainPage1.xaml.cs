@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -14,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 using Windows.UI.Xaml.Media.Animation;
+using Save_the_Humans.Common;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -134,8 +136,8 @@ namespace TA
         /// NavigationHelper to respond to the page's navigation methods.
         /// 
         /// Page specific logic should be placed in event handlers for the  
-        /// <see cref="GridCS.Common.NavigationHelper.LoadState"/>
-        /// and <see cref="GridCS.Common.NavigationHelper.SaveState"/>.
+        /// <see cref="Save_the_Humans.Common.NavigationHelper.LoadState"/>
+        /// and <see cref="Save_the_Humans.Common.NavigationHelper.SaveState"/>.
         /// The navigation parameter is available in the LoadState method 
         /// in addition to page state preserved during an earlier session.
 
@@ -217,7 +219,7 @@ namespace TA
             if (humanCaptured)
             {
                 Point pointerPosition = e.GetCurrentPoint(null).Position;
-                Point relativePosition = grid.TransformToVisual(playArea).TransformPoint(pointerPosition);
+                Point relativePosition = target.TransformToVisual(playArea).TransformPoint(pointerPosition);
                 if ((Math.Abs(relativePosition.X - Canvas.GetLeft(human)) > human.ActualWidth * 3)
                     || (Math.Abs(relativePosition.Y - Canvas.GetTop(human)) > human.ActualHeight * 3))
                 {
